@@ -13,4 +13,9 @@ class Account
     @balance
   end
 
+  def add_deposit(deposit)
+    @balance += deposit.amount
+    @transactions << {"date" => deposit.date, "deposit" => deposit.amount, "withdrawal" => 0, "balance" => @balance}
+  end
+
 end
